@@ -15,6 +15,14 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
 
+//test
+app.get("/test", (req, res)=>{
+    try{
+        res.json("test")
+    }catch(error){
+        res.json("data cannot be send due to :- ",error);
+    }
+})
 
 //sending home section 1 datas
 app.get("/get-Main-datas", (req, res)=>{
