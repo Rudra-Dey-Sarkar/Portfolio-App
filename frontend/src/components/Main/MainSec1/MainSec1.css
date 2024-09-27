@@ -1,0 +1,99 @@
+/*Section 1*/
+.main-sec1 {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #081b29;
+    padding: 60px 25px 25px 25px;
+    display: flex;
+}
+.intro-texts {
+    padding-top: 90px;
+    width: 45%;
+    color: white;
+}
+.intro-heading {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+#type {
+    display: flex;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+#type p {
+    margin: 0;
+    margin-right: 5px;
+}
+.Typewriter__wrapper {
+    color: #0ef;
+}
+img {
+    width: 65%;
+}
+
+.btns{
+    margin-top: 15%;
+}
+
+#download-btns{
+    background-color: #0ef;
+    color: #081b29;
+    border: 1px solid #0ef;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+#download-btns:hover{
+    cursor: pointer;
+    background-color: #081b29;
+    color: #0ef;
+    border: 1px solid #0ef;
+    box-shadow: 0px 0px 25px #0ef;
+}
+#projects-btns{
+    background-color: #081b29;
+    color: #0ef;
+    border: 1px solid #0ef;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+#projects-btns:hover{
+    background-color:#0ef;
+    color: #081b29;
+    box-shadow: 0px 0px 25px #0ef;
+}
+
+
+@media(max-width:600px){
+    .main-sec1 {
+        display: grid;
+        padding: 60px 10px 10px 10px;
+    }
+    .intro-texts {
+        padding-top: 0px;
+        width: 100%;
+      }
+      .intro-heading {
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+      #type {
+        display: flex;
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+      .main-sec1 img{
+        width: 100%;
+       }
+      .btns {
+        display: flex;
+        justify-content: center;
+        margin-top: 15%;
+        margin-bottom: 15%;
+      }
+}
