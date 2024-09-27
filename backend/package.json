@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-website-backend",
+  "version": "1.0.0",
+  "description": "this is the backend portion for my portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rudra dey sarkar",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "nodemon": "^3.1.7"
+  }
+}
