@@ -9,31 +9,31 @@ module.exports.AboutDatas = [
                     frontend_skills: [
                         {
                             skill: "HTML5",
-                            icon: "",
+                            icon: "https://raw.githubusercontent.com/Rudra-Dey-Sarkar/Portfolio-App/refs/heads/main/Icons/About%20Icons/html5.png",
                         },
                         {
                             skill: "CSS3",
-                            icon: "",
+                            icon: "https://github.com/Rudra-Dey-Sarkar/Portfolio-App/blob/main/Icons/About%20Icons/CSS.png?raw=true",
                         },
                         {
                             skill: "Bootstrap",
-                            icon: "",
+                            icon: "https://github.com/Rudra-Dey-Sarkar/Portfolio-App/blob/main/Icons/About%20Icons/bootstrap.png?raw=true",
                         },
                         {
                             skill: "JavaScript ",
-                            icon: "",
+                            icon: "https://github.com/Rudra-Dey-Sarkar/Portfolio-App/blob/main/Icons/About%20Icons/javascript.png?raw=true",
                         },
                         {
                             skill: "TypeScript ",
-                            icon: "",
+                            icon: "https://github.com/Rudra-Dey-Sarkar/Portfolio-App/blob/main/Icons/About%20Icons/typescript.png?raw=true",
                         },
                         {
                             skill: "ReactJS & React Native ",
-                            icon: "",
+                            icon: "https://github.com/Rudra-Dey-Sarkar/Portfolio-App/blob/main/Icons/About%20Icons/react.png?raw=true",
                         },
                         {
                             skill: "NextJS",
-                            icon: "",
+                            icon: "https://github.com/Rudra-Dey-Sarkar/Portfolio-App/blob/main/Icons/About%20Icons/nextjs.png?raw=true",
                         },
                     ]
                 },
@@ -42,19 +42,19 @@ module.exports.AboutDatas = [
                     backend_skills: [
                         {
                             skill: "NodeJs",
-                            icon: "",
+                            icon: "https://github.com/Rudra-Dey-Sarkar/Portfolio-App/blob/main/Icons/About%20Icons/nodejs.png?raw=true",
                         },
                         {
                             skill: "ExpressJS",
-                            icon: "",
+                            icon: "https://github.com/Rudra-Dey-Sarkar/Portfolio-App/blob/main/Icons/About%20Icons/express.png?raw=true",
                         },
                         {
                             skill: "MongoDB",
-                            icon: "",
+                            icon: "https://github.com/Rudra-Dey-Sarkar/Portfolio-App/blob/main/Icons/About%20Icons/mongo.png?raw=true",
                         },
                         {
                             skill: "Strapi",
-                            icon: "",
+                            icon: "https://github.com/Rudra-Dey-Sarkar/Portfolio-App/blob/main/Icons/About%20Icons/strapi.png?raw=true",
                         },
                     ]
                 },
