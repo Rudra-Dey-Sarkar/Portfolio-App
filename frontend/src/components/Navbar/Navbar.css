@@ -22,10 +22,10 @@
 cursor:pointer;
 }
 #nav-opt {
-    margin-right:25px;
     width: fit-content;
     height: fit-content;
     display: flex;
+    margin-right: 3%;
 }
 .main-opt, .about-opt, .project-opt{
     text-decoration: none;
