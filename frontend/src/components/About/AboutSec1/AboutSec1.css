@@ -61,6 +61,13 @@
     font-size: 1.2rem;
     font-weight: 600;
 }
+.skills-f p{
+    margin-right: 25px;
+}
+.skills-f-icons{
+    width: 45px;
+    height: 45px;
+}
 .backend{
     border: 2px solid #0ef; 
     border-radius: 10px;
@@ -79,11 +86,18 @@
 }
 .skills-b {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     color: white;
     font-size: 1.2rem;
     font-weight: 600;
+}
+.skills-b p{
+    margin-right: 25px;
+}
+.skills-b-icons{
+    width: 45px;
+    height: 45px;
 }
 
 
