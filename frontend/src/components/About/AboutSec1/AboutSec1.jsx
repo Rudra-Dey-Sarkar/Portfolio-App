@@ -7,7 +7,7 @@ function AboutSec1() {
 
   useEffect(() => {
     try {
-      axios.get("https://portfolio-app-backend-five.vercel.app/get-about-datas").then((response) => {
+      axios.get("http://localhost:5000/get-about-datas").then((response) => {
         setDatas(response.data);
 
       }).catch((err) => {
@@ -32,15 +32,39 @@ function AboutSec1() {
             <div className='fullstack'>
               <div className='frontend'>
                 <p className='skills-f-text'>{e.sec1.skills.frontend.frontend_main_text1}</p>
-                {e.sec1.skills.frontend.frontend_skills.map((f_e, f_i)=>(
-                  <p key={f_i} className='skills-f'>{f_e.skill}&nbsp;{f_e.icon}</p>
+                {e.sec1.skills.frontend.frontend_skills.map((f_e, f_i) => (
+                  <div key={f_i}>
+                    {f_e.skill !== "NextJS" ? (
+                      <div className='skills-f'>
+                        <p>{f_e.skill}</p>
+                        <img src={f_e.icon} alt={f_e.skill} className='skills-f-icons' />
+                      </div>
+                    ) : (
+                      <div className='skills-f'>
+                        <p>{f_e.skill}</p>
+                        <div style={{ backgroundColor: "white" }}><img src={f_e.icon} alt={f_e.skill} className='skills-f-icons' /></div>
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
 
               <div className='backend'>
                 <p className='skills-b-text'>{e.sec1.skills.backend.backend_main_text1}</p>
-                {e.sec1.skills.backend.backend_skills.map((b_e, b_i)=>(
-                  <p key={b_i} className='skills-f'>{b_e.skill}&nbsp;{b_e.icon}</p>
+                {e.sec1.skills.backend.backend_skills.map((b_e, b_i) => (
+                  <div key={b_i}>
+                   {b_e.skill !=="ExpressJS" ? (
+                  <div className='skills-b'>
+                    <p>{b_e.skill}</p>
+                    <img src={b_e.icon} alt={b_e.skill} className='skills-b-icons' />
+                  </div>
+                   ):(
+                    <div className='skills-b'>
+                    <p>{b_e.skill}</p>
+                    <div style={{ backgroundColor: "white" }}><img src={b_e.icon} alt={b_e.skill} className='skills-b-icons' /></div>
+                    </div> 
+                   )}
+                  </div>
                 ))}
               </div>
 
