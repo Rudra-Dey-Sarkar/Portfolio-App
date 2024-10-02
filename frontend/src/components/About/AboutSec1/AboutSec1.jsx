@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react'
 import "./AboutSec1.css"
 import { Computer } from '../../Icons/Icons'
 import axios from "axios"
+import { motion } from "framer-motion"
+
 function AboutSec1() {
-  const [datas, setDatas] = useState([]);
+  const [datas, setDatas] = useState();
 
   useEffect(() => {
     try {
       axios.get("http://localhost:5000/get-about-datas").then((response) => {
-        setDatas(response.data);
+        setTimeout(()=>{
+          setDatas(response.data);
+        }, 1000);
 
       }).catch((err) => {
         console.log("data not fetched due to :-", err);
@@ -20,6 +24,24 @@ function AboutSec1() {
 
   return (
     <div>
+
+      {!datas ? (
+        <div style={{backgroundColor:"#081b29" ,width: "100%", height: "100vh", display:"flex", justifyContent:"center", alignItems:"center" }}>
+          <motion.div
+            style={{ backgroundColor: "#0ef", width: "100px", height: "100px" }}
+            animate={{
+              scale: [1, 2, 2, 1, 1],
+              rotate: [0, 0, 270, 270, 0],
+              borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "loop",
+            }} />
+        </div>
+      ) : (
+        <div>
       {datas.map((e, index) => (
         <section key={index} className='about-sec1'>
 
@@ -53,17 +75,17 @@ function AboutSec1() {
                 <p className='skills-b-text'>{e.sec1.skills.backend.backend_main_text1}</p>
                 {e.sec1.skills.backend.backend_skills.map((b_e, b_i) => (
                   <div key={b_i}>
-                   {b_e.skill !=="ExpressJS" ? (
-                  <div className='skills-b'>
-                    <p>{b_e.skill}</p>
-                    <img src={b_e.icon} alt={b_e.skill} className='skills-b-icons' />
-                  </div>
-                   ):(
-                    <div className='skills-b'>
-                    <p>{b_e.skill}</p>
-                    <div style={{ backgroundColor: "white" }}><img src={b_e.icon} alt={b_e.skill} className='skills-b-icons' /></div>
-                    </div> 
-                   )}
+                    {b_e.skill !== "ExpressJS" ? (
+                      <div className='skills-b'>
+                        <p>{b_e.skill}</p>
+                        <img src={b_e.icon} alt={b_e.skill} className='skills-b-icons' />
+                      </div>
+                    ) : (
+                      <div className='skills-b'>
+                        <p>{b_e.skill}</p>
+                        <div style={{ backgroundColor: "white" }}><img src={b_e.icon} alt={b_e.skill} className='skills-b-icons' /></div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -73,6 +95,9 @@ function AboutSec1() {
 
         </section>
       ))}
+        </div>
+      )}
+
     </div>
   )
 }
