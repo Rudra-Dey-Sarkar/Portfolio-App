@@ -10,7 +10,9 @@ function AboutSec1() {
   useEffect(() => {
     try {
       axios.get("https://portfolio-app-backend-five.vercel.app/get-about-datas").then((response) => {
-      setDatas(response.data);
+          setTimeout(() => {
+          setDatas(response.data);
+        }, 1000);
       }).catch((err) => {
         console.log("data not fetched due to :-", err);
       })
