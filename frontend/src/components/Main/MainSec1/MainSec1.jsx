@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
-// import { motion } from "framer-motion"
+import { motion } from "framer-motion"
 import "./MainSec1.css";
 import axios from "axios";
 function MainSec1() {
@@ -24,7 +24,7 @@ function MainSec1() {
 
   return (
     <div>
-{/*       {!datas ? (
+      {!datas ? (
         <div style={{ backgroundColor: "#081b29", width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
           <motion.div
             style={{ backgroundColor: "#0ef", width: "100px", height: "100px" }}
@@ -39,7 +39,7 @@ function MainSec1() {
               repeatType: "loop",
             }} />
         </div>
-      ) : ( */}
+      ) : (
         <div>
           {
             datas.map((e, index) => (
@@ -69,7 +69,7 @@ function MainSec1() {
             ))
           }
         </div>
-{/*       )} */}
+      )}
     </div>
   );
 }
