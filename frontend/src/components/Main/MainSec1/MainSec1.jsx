@@ -10,10 +10,7 @@ function MainSec1() {
   useEffect(() => {
     try {
       axios.get("http://localhost:5000/get-main-datas").then((response) => {
-        setTimeout(() => {
-          setDatas(response.data);
-        }, 1000);
-
+setDatas(response.data);
       }).catch((err) => {
         console.log("data not fetched due to :-", err);
       })
