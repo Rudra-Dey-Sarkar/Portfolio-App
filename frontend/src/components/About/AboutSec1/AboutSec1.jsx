@@ -9,7 +9,7 @@ function AboutSec1() {
 
   useEffect(() => {
     try {
-      axios.get("http://localhost:5000/get-about-datas").then((response) => {
+      axios.get("https://portfolio-app-backend-five.vercel.app/get-about-datas").then((response) => {
 setDatas(response.data);
 
       }).catch((err) => {
