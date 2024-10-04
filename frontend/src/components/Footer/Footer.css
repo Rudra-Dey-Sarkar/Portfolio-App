@@ -1,13 +1,85 @@
 .footer{
-    display: flex;
+    display: grid;
     justify-content: center;
     background-color: #081b29;
     padding: 25px;
 }
+.social-icons{
+
+    margin: 25px;
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+#fb{
+    color: #0ef;
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+}
+#fb:hover{
+border: 2px solid #0ef;
+border-radius: 5px;
+scale: 1.2;
+}
+#ig{
+    color: #0ef;
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+}
+#ig:hover{
+    border: 2px solid #0ef;
+    border-radius: 5px;
+    scale: 1.2;
+    }
+#li{
+    color: #0ef;
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+}
+#li:hover{
+    border: 2px solid #0ef;
+    border-radius: 5px;
+    scale: 1.2;
+    }
+#gb{
+    color: #0ef;
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+}
+#gb:hover{
+    border: 2px solid #0ef;
+    border-radius: 5px;
+    scale: 1.2;
+    }
+#em{
+    color: #0ef;
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+}
+#em:hover{
+    border: 2px solid #0ef;
+    border-radius: 5px;
+    scale: 1.2;
+    }
 
 .footer p{
+    text-align: center;
     margin: 0px;
     color: white;
     font-size: 1.2rem;
     font-weight: 600;
+}
+
+@media(max-width:600px){
+    .social-icons{
+        width: 100vw;
+        justify-content: space-evenly;
+        background-color: aquamarine;
+    }
 }
