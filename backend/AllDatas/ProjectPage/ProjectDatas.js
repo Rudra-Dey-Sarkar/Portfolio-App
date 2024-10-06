@@ -8,7 +8,7 @@ module.exports.ProjectDatas = [
                     p_pics: {
                         pic1: "https://raw.githubusercontent.com/Rudra-Dey-Sarkar/Portfolio-App/refs/heads/main/Images/portfolio.png",
                     },
-                    link: "",
+                    link: "https://portfolio-app-frontend-delta.vercel.app/",
                     p_details: "test"
                 },
                 {
@@ -16,7 +16,7 @@ module.exports.ProjectDatas = [
                     p_pics: {
                         pic1: "https://raw.githubusercontent.com/Rudra-Dey-Sarkar/Portfolio-App/refs/heads/main/Images/rock-paper-scissors.png",
                     },
-                    link: "",
+                    link: "https://rudra-dey-sarkar.github.io/Rock-Paper-Scissor-Game/",
                     p_details: "test"
                 },
                 {
@@ -24,7 +24,7 @@ module.exports.ProjectDatas = [
                     p_pics: {
                         pic1: "https://raw.githubusercontent.com/Rudra-Dey-Sarkar/Portfolio-App/refs/heads/main/Images/college-erp-system.png",
                     },
-                    link: "",
+                    link: "https://college-erp-system-updated-frontend.vercel.app/",
                     p_details: "test"
                 }
             ]
