@@ -35,7 +35,7 @@ function Navbar() {
 
     return (
         <div className='nav-body'>
-            <p id='logo'>Rudra</p>
+            <Link to="/" style={{textDecoration:"none"}}><p id='logo'>Rudra</p></Link>
 
             <div id='nav-opt'>
                 <Link to="/" className='main-opt'>Main</Link>
