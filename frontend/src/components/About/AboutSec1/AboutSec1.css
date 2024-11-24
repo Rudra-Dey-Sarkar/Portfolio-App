@@ -55,7 +55,7 @@
 }
 .skills-f {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     color: white;
     font-size: 1.2rem;
@@ -86,7 +86,7 @@
 }
 .skills-b {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     color: white;
     font-size: 1.2rem;
