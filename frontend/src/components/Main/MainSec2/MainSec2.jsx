@@ -3,22 +3,35 @@ import "./MainSec2.css"
 import axios from "axios"
 import { SoftwareDeveloper, Gamer, Athlete  } from '../../Icons/Icons';
 import { motion } from "framer-motion"
+
+async function MainSec2Data(setDatas){
+
+  try {
+    const response =await fetch(`${process.env.REACT_APP_BACKEND_KEY}/get-main-datas`, {
+    method:"POST",
+    headers:{
+     "Content-Type" : "application/json"
+    },
+    body:JSON.stringify({secName:"sec2"})
+    });
+
+    if(response.ok){
+     const data = await response.json();
+       setTimeout(() => {
+         setDatas(data);
+       }, 1000);
+    }
+     
+   } catch (error) {
+     console.log("request to fetch the data not send due to", error);
+   }
+}
+
 function MainSec2() {
   const [datas, setDatas] = useState();
 
-  useEffect(() => {
-    try {
-      axios.get("https://portfolio-app-backend-five.vercel.app/get-main-datas").then((response) => {
-        setTimeout(() => {
-          setDatas(response.data);
-        }, 1000);
-
-      }).catch((err) => {
-        console.log("data not fetched due to :-", err);
-      })
-    } catch (error) {
-      console.log("request to fetch the data not send due to", error);
-    }
+  useEffect( () => {
+    MainSec2Data(setDatas);
   }, [])
 
   return(
@@ -48,7 +61,7 @@ function MainSec2() {
               <p className='gamer'> a Passionate <Gamer/> Gamer</p>
               <p className='gamer'> a Passionate <Athlete/> Athlete</p>
             </div>
-            <img src={e.sec2.pics.pic1}></img>
+            <img src={e?.pics?.pic1}></img>
           </section>
           ))}
         </div>

@@ -1,24 +1,37 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { json, Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import { motion } from "framer-motion"
 import "./MainSec1.css";
-import axios from "axios";
+
+async function MainSec1Data(setDatas){
+
+  try {
+    const response =await fetch(`${process.env.REACT_APP_BACKEND_KEY}/get-main-datas`, {
+    method:"POST",
+    headers:{
+     "Content-Type" : "application/json"
+    },
+    body:JSON.stringify({secName:"sec1"})
+    });
+
+    if(response.ok){
+     const data = await response.json();
+       setTimeout(() => {
+         setDatas(data);
+       }, 1000);
+    }
+     
+   } catch (error) {
+     console.log("request to fetch the data not send due to", error);
+   }
+}
+
 function MainSec1() {
   const [datas, setDatas] = useState();
 
-  useEffect(() => {
-    try {
-      axios.get("https://portfolio-app-backend-five.vercel.app/get-main-datas").then((response) => {
-        setTimeout(() => {
-          setDatas(response.data);
-        }, 1000);
-      }).catch((err) => {
-        console.log("data not fetched due to :-", err);
-      })
-    } catch (error) {
-      console.log("request to fetch the data not send due to", error);
-    }
+  useEffect( () => {
+    MainSec1Data(setDatas);
   }, [])
 
   return (
@@ -44,7 +57,7 @@ function MainSec1() {
             datas.map((e, index) => (
               <section key={index} className='main-sec1'>
                 <div className='intro-texts'>
-                  <p className='intro-heading'>{e.sec1.main_text1}</p>
+                  <p className='intro-heading'>{e?.main_text1}</p>
                   <div id='type'>
                     <p>I'm a </p>
                     <Typewriter
@@ -54,15 +67,15 @@ function MainSec1() {
                         loop: true,
                       }} />
                   </div>
-                  <p>{e.sec1.intro_text1}</p>
+                  <p>{e?.intro_text1}</p>
                   <div className='btns'>
-                    <a href={e.sec1.pdf_link} download={e.sec1.pdf_name}>
+                    <a href={e?.pdf_link} download={e?.pdf_name}>
                       <button id='download-btns'>Download CV</button>
                     </a>
                     <Link to="/projects" id='projects-btns'>Projects</Link>
                   </div>
                 </div>
-                <img src={e.sec1.pics.pic1} alt={e.sec1.main_text1} />
+                <img src={e?.pics?.pic1} alt={e?.main_text1} />
               </section>
 
             ))

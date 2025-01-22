@@ -4,23 +4,31 @@ import { Link } from 'react-router-dom'
 import axios from "axios"
 import { motion } from "framer-motion"
 
+async function ProjectData(setDatas){
+
+  try {
+    const response =await fetch(`${process.env.REACT_APP_BACKEND_KEY}/get-project-datas`);
+
+    if(response.ok){
+     const data = await response.json();
+       setTimeout(() => {
+         setDatas(data);
+       }, 1000);
+    }
+     
+   } catch (error) {
+     console.log("request to fetch the data not send due to", error);
+   }
+}
+
 function ProjectSec1() {
 
   const [datas, setDatas] = useState();
 
-  useEffect(() => {
-    try {
-      axios.get("https://portfolio-app-backend-five.vercel.app/get-project-datas").then((response) => {
-        setTimeout(() => {
-          setDatas(response.data);
-        }, 1000);
 
-      }).catch((err) => {
-        console.log("data not fetched due to :-", err);
-      })
-    } catch (error) {
-      console.log("request to fetch the data not send due to", error);
-    }
+
+  useEffect(() => {
+    ProjectData(setDatas);
   }, [])
 
   return (
@@ -42,17 +50,17 @@ function ProjectSec1() {
             }} />
         </div>
       ) : (
-        <div>
+        <div  className='project-sec1'>
+          <p className='projects-mt'>Projects</p>
           {datas.map((e, index) => (
-            <section key={index} className='project-sec1'>
-              <p className='projects-mt'>{e.sec1.main_text1}</p>
-              {e.sec1.projects.map((sec1_e, sec1_i) => (
-                <div key={sec1_i} className='project'>
-                  <p className='p-mt'>{sec1_e.p_name}</p>
-                  <Link to={sec1_e.link}><img src={sec1_e.p_pics.pic1} alt="" className='p-img' /></Link>
-                  <p className='p-abt'>{sec1_e.p_details}</p>
+            <section key={index}>
+
+                <div className='project'>
+                  <p className='p-mt'>{e?.p_name}</p>
+                  <Link to={e.link}><img src={e?.p_pics?.pic1} alt="" className='p-img' /></Link>
+                  <p className='p-abt'>{e?.p_details}</p>
                 </div>
-              ))}
+
             </section>
           ))}
         </div>
