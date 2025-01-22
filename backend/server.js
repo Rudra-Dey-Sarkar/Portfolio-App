@@ -10,7 +10,7 @@ ConnectDB();
 
 //Cors data configure
 const corsOptions = {
-    origin: process.env.FRONTEND,
+    origin: '*',
     optionsSuccessStatus: 200
 };
 
