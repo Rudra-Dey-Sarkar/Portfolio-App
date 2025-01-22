@@ -9,6 +9,7 @@ const main = require("./src/models/main");
 ConnectDB();
 
 
+
 //Cors data configure
 const corsOptions = {
     origin: process.env.FRONTEND,
